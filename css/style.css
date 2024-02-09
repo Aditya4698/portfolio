@@ -1,0 +1,448 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --black: #171321;
+  --dkblue: #0d314b;
+  --plum: #4b0d49;
+  --hotmag: #ff17e4;
+  --magenta: #e310cb;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* generic styles for the page */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+a {
+  color: var(--magenta);
+}
+
+a:hover {
+  color: var(--hotmag);
+  text-decoration: none;
+}
+/* intro styles */
+#intro {
+  padding-bottom: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--mono);
+  font-size: 1rem;
+}
+
+.name span {
+  font-family: var(--sans);
+  font-size: 4rem;
+  color: var(--aqua);
+  display: block;
+  font-weight: 300;
+  /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+}
+
+#intro h2 {
+  font-size: 4rem;
+}
+
+.gradient {
+  background: linear-gradient(90deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 100%);
+  height: 2px;
+}
+
+/* contact section */
+
+#contact {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.section-plum {
+  background-color: var(--plum);
+}
+
+
+
+#contact p:last-child {
+  margin-top: 3rem;
+  
+}
+
+#contact a {
+  text-decoration: none;
+  
+}
+
+
+
+/* navigation */
+nav {
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 1rem;
+}
+
+nav h1 a {
+  font-family: var(--sans);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--aqua);
+}
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--aqua);
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+  color: var(--magenta);
+}
+.button {
+  background-color: var(--magenta);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--mono);
+}
+
+.button:hover {
+  color: white;
+  background-color: var(--hotmag);
+}
+/* footer section */
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
+
+.typewriter {
+    overflow: hidden;  
+    border-right: .15em solid orange;
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 6s steps(50, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  
+   @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  } 
+/*
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  } */
+
+  .ribbon {
+    width: 50px;
+    font-size: 10px;
+    padding: 2px;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    text-align: center;
+    border-radius: 25px;
+    /* transform: rotate(30deg); */
+    color: white;
+    margin: 0;
+  }
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--white);
+  font-family: var(--oxygen);
+  font-weight: bolder;
+  padding: 4rem 0;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  background-color: var(--aqua);
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--aqua);
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: var(--plum);
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+img {
+  width: 100%;
+  height: 500px;
+}
+
+.section-blue {
+  background-color: var(--dkblue);
+}
+
+#projects {
+  padding: 4rem 1rem;
+}
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+}
+#projects h3 {
+    color: var(--aqua);
+}
+
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+.blackbox {
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--black);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+}
+#projects img {
+    margin: 2rem 0 4rem 0;
+    padding: 1rem;
+    border-left: 1px solid var(--aqua);
+    border-top: 1px solid var(--aqua);
+    border-radius: 25px;
+}
+
+@media (min-width: 800px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+  }
+  #projects ul {
+    justify-content: flex-end;
+  }
+  #projects .reverse .text {
+    grid-column: 1/7;
+    order: 2;
+    text-align: left;
+  }
+  #projects .reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+  #projects .reverse ul {
+    justify-content: flex-start;
+  }
+}
